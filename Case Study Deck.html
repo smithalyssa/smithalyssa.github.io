@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>RSP Bookings | Board Working Session</title>
+<style>
+:root{--n0:#2e3440;--n1:#3b4252;--n2:#434c5e;--n3:#4c566a;--n4:#d8dee9;--n5:#e5e9f0;--n6:#eceff4;--n7:#8fbcbb;--n8:#88c0d0;--n9:#81a1c1;--n10:#5e81ac;--n11:#bf616a;--n12:#d08770;--n13:#ebcb8b;--n14:#a3be8c;--n15:#b48ead;--muted:#aeb9c9;--edge:#566176}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#242a34;color:var(--n6);font-family:Inter,'Segoe UI',Arial,sans-serif}button{font:inherit}.slides{scroll-snap-type:y mandatory;height:100vh;overflow-y:auto;scroll-behavior:smooth}.slide{scroll-snap-align:start;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:3.3vh 2.8vw}.canvas{height:min(92vh,790px);width:min(96vw,1405px);background:var(--n0);border:1px solid var(--n2);border-radius:20px;box-shadow:0 28px 100px #13171e99;display:flex;flex-direction:column;padding:38px 50px 25px;position:relative;overflow:hidden}.canvas:before{content:'';height:4px;position:absolute;top:0;left:0;width:100%;background:linear-gradient(90deg,var(--n8),var(--n9),transparent)}.eyebrow{font-size:11px;letter-spacing:2.1px;font-weight:800;color:var(--n8);text-transform:uppercase}.title{font-size:clamp(25px,2.65vw,40px);line-height:1.16;max-width:1100px;letter-spacing:-.8px;margin:13px 0 10px;font-weight:760}.subtitle{font-size:15px;color:var(--muted);line-height:1.45;margin:0 0 20px}.content{flex:1;min-height:0;display:flex;flex-direction:column;gap:18px}.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--n2);margin-top:18px;padding-top:14px;color:#91a0b5;font-size:10px}.footer strong{color:var(--n8)}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.kpi,.card,.panel{background:var(--n1);border:1px solid var(--n2);border-radius:12px}.kpi{padding:15px 19px}.kpi label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;display:block}.kpi b{font-size:29px;line-height:1.5;letter-spacing:-.7px}.kpi small{display:block;color:var(--muted);font-size:11px}.danger{color:var(--n11)!important}.aqua{color:var(--n8)!important}.green{color:var(--n14)!important}.amber{color:var(--n13)!important}.two{display:grid;grid-template-columns:1.22fr 1fr;gap:16px;min-height:0;flex:1}.two.equal{grid-template-columns:1fr 1fr}.panel{padding:19px 22px;min-width:0;min-height:0}.panel h3,.card h3{margin:0 0 14px;font-size:12px;letter-spacing:1.15px;text-transform:uppercase;color:var(--n8)}.note{font-size:12px;line-height:1.5;color:var(--muted)}.insight{padding:13px 16px;border-left:3px solid var(--n8);background:#4652647a;border-radius:0 8px 8px 0;font-size:13px;line-height:1.5}.mini-table{width:100%;border-collapse:collapse;font-size:13px}.mini-table th{text-align:left;color:var(--muted);font-size:11px;font-weight:600;padding:9px 8px;border-bottom:1px solid var(--edge)}.mini-table td{padding:10px 8px;border-bottom:1px solid #53607188}.mini-table th:not(:first-child),.mini-table td:not(:first-child){text-align:right}.mini-table tr:last-child td{border-bottom:0}.mini-table tr.total{color:var(--n6);font-weight:800;background:#4c566a66}.legend{display:flex;align-items:center;gap:16px;font-size:11px;color:var(--muted);margin-bottom:10px}.dot{width:9px;height:9px;display:inline-block;border-radius:2px;margin-right:5px}.monthly{height:215px;display:grid;grid-template-columns:repeat(9,1fr);gap:12px;align-items:end;border-bottom:1px solid var(--edge);padding:12px 4px 0}.month{height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:7px}.bars{height:185px;display:flex;align-items:end;gap:5px;width:100%;justify-content:center}.bar{width:43%;border-radius:4px 4px 0 0;min-height:2px;position:relative}.bar.plan{background:var(--n3)}.bar.actual{background:var(--n8)}.bar:hover:before{content:attr(data-val);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1e2530;padding:5px 7px;border-radius:5px;font-size:10px;white-space:nowrap;z-index:2}.month span{font-size:10px;color:var(--muted)}.waterfall{display:flex;gap:10px;height:245px;align-items:stretch;position:relative;border-bottom:1px solid var(--edge)}.wf{flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;min-width:0}.wfgraphic{height:200px;width:76%;position:relative}.wfblock{position:absolute;left:0;right:0;border-radius:4px;background:var(--n8)}.wfblock.minus{background:var(--n11)}.wfblock.plus{background:var(--n14)}.wfblock.neutral{background:var(--n9)}.wf label{font-size:10px;line-height:1.23;color:var(--muted);margin-top:8px;text-align:center;min-height:27px}.wf em{font-size:12px;font-weight:800;font-style:normal;position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:-22px;color:var(--n6)}.callout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.callout{background:var(--n1);padding:15px;border-radius:10px;border:1px solid var(--n2)}.callout strong{font-size:23px;display:block;margin-bottom:7px}.callout span{font-size:12px;color:var(--muted);line-height:1.4;display:block}.stage-row{display:grid;grid-template-columns:125px 1fr 1fr 80px;align-items:center;gap:13px;margin:15px 0}.stage-name{color:var(--n5);font-size:13px}.track{height:16px;background:#505c6d;border-radius:4px;overflow:hidden}.fill{height:100%;border-radius:4px}.fill.prev{background:var(--n9)}.fill.now{background:var(--n11)}.stage-value{font-size:12px;font-variant-numeric:tabular-nums;text-align:right}.verdict{padding:15px 0;border-bottom:1px solid var(--n2)}.verdict:last-child{border:0}.verdict h4{font-size:14px;margin:0 0 7px}.verdict p{margin:0;color:var(--n5);font-size:13px;line-height:1.55}.price-row{display:grid;grid-template-columns:150px 1fr 64px;gap:12px;align-items:center;margin:13px 0;font-size:12px}.price-track{height:20px;background:#505c6d;border-radius:5px;overflow:hidden}.price-fill{height:100%;border-radius:5px;background:var(--n9)}.price-fill.ours{background:var(--n8)}.price-fill.market{background:var(--n3)}.price-num{text-align:right;font-size:13px;font-weight:700}.recommendation{padding:18px 20px;background:var(--n1);border:1px solid var(--n2);border-radius:11px;display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:start}.num{width:31px;height:31px;background:#5e81ac55;color:var(--n8);border-radius:7px;display:grid;place-items:center;font-weight:800}.recommendation h4{font-size:15px;margin:0 0 5px}.recommendation p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}.impact{text-align:right}.impact strong{display:block;font-size:22px;color:var(--n14)}.impact span{font-size:11px;color:var(--muted)}.forecast-row{display:grid;grid-template-columns:65px 1fr 67px;gap:12px;align-items:center;margin:17px 0;font-size:12px}.forecast-bar{height:24px;background:#505c6d;border-radius:5px;overflow:hidden}.forecast-fill{height:100%;background:var(--n9);border-radius:5px}.forecast-fill.base{background:var(--n8)}.forecast-fill.plan{background:var(--n3)}.ask{display:flex;gap:9px;flex-wrap:wrap}.ask span{background:#4c566a88;border:1px solid var(--n2);border-radius:7px;padding:9px 12px;font-size:12px}.controls{position:fixed;bottom:18px;right:22px;display:flex;align-items:center;gap:7px;z-index:10;background:#222936e9;padding:8px;border:1px solid var(--n2);border-radius:12px;box-shadow:0 5px 25px #0005}.controls button{background:var(--n1);color:var(--n6);border:1px solid var(--n2);border-radius:7px;padding:8px 12px;cursor:pointer}.controls button:hover{background:var(--n3)}#counter{font-size:12px;color:var(--n4);min-width:42px;text-align:center}.progress{position:fixed;bottom:0;left:0;width:100%;height:3px;z-index:11;background:#1f242f}.progress>div{height:100%;width:20%;background:var(--n8);transition:width .2s}.source{color:#9aa9bb;font-size:11px}.tight .content{gap:12px}.compact{font-size:11px}.compact td{padding:7px 8px}@media(max-width:950px){.canvas{padding:24px;min-height:740px;height:auto}.slide{height:auto;min-height:100vh}.slides{scroll-snap-type:none}.title{font-size:27px}.two{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.content{flex:none}.monthly{height:170px}.bars{height:140px}.panel{padding:16px}.waterfall{height:210px}.wfgraphic{height:165px}.controls{bottom:10px;right:10px}}@media print{body{background:white}.slides{height:auto;overflow:visible}.slide{height:100vh;min-height:0;padding:0;break-after:page}.canvas{width:100%;height:100%;max-width:none;border:0;border-radius:0;box-shadow:none}.controls,.progress{display:none}@page{size:landscape;margin:0}}
+
+
+/* Targeted Nord dark presentation refinements */
+.kpis{grid-template-columns:repeat(5,minmax(0,1fr))}.kpi{padding:13px 14px}.kpi b{font-size:26px}.footer{justify-content:flex-end}.slide .title{margin-bottom:8px}.slide .subtitle{margin-bottom:16px}
+.narrative-grid{display:grid;grid-template-columns:1.18fr 1fr;gap:13px;flex:1;min-height:0}.narrative-grid .panel{padding:13px 16px}.narrative-grid h3{margin-bottom:8px;font-size:11px}.stage-panel{height:100%;}.stage-item{display:grid;grid-template-columns:108px 1fr 48px;gap:9px;align-items:center;margin:10px 0}.stage-item .stage-name{font-size:11px}.double-track{display:flex;flex-direction:column;gap:3px}.double-track .track{height:9px}.delta{font-size:11px;color:var(--n11);text-align:right;font-weight:700}.stage-detail{font-size:10px;color:var(--muted);text-align:right}.section-divider{height:1px;background:var(--n2);margin:11px 0 9px}.loss-item{display:grid;grid-template-columns:108px 1fr 78px;gap:9px;align-items:center;margin:9px 0;font-size:10px}.loss-bars{display:flex;flex-direction:column;gap:3px}.loss-bars .track{height:9px}.right-diagnostics{display:flex;flex-direction:column;gap:10px;min-height:0}.diagnostic-mini{padding:12px 15px!important}.seller-comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px}.seller-comparison span{font-size:10px;color:var(--muted)}.seller-line{display:flex;align-items:center;gap:5px;margin-top:5px}.seller-line b{font-size:11px;white-space:nowrap}.seller-track{height:9px;flex:1;min-width:35px;border-radius:4px;background:#526071;overflow:hidden}.seller-fill{height:100%;background:var(--n14);min-width:0}.seller-fill.new{background:var(--n11)}.donut-zone{display:flex;gap:20px;align-items:center}.donut-loss{height:106px;width:106px;flex-shrink:0;border-radius:50%;background:conic-gradient(var(--n11) 0 8.0645%,var(--n13) 8.0645% 52.8226%,var(--n9) 52.8226% 82.2581%,var(--n14) 82.2581% 100%);display:grid;place-items:center}.donut-inner{height:73px;width:73px;border-radius:50%;background:var(--n1);display:flex;flex-direction:column;align-items:center;justify-content:center}.donut-inner strong{font-size:23px;color:var(--n11)}.donut-inner span{font-size:9px;color:var(--muted)}.donut-legend{flex:1}.donut-legend div{display:flex;align-items:center;gap:7px;font-size:10px;margin:7px 0;color:var(--n5)}.donut-legend i{height:9px;width:9px;border-radius:2px;flex-shrink:0}.donut-legend b{margin-left:auto}.verdict-panel{flex:1;padding:13px 16px!important}.verdict-panel .verdict{padding:7px 0}.verdict-panel h4{font-size:11px;margin-bottom:4px}.verdict-panel p{font-size:11px;line-height:1.35}.price-premium{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.price-premium>div{padding:11px;background:#4c566a66;border-radius:8px}.price-premium strong{font-size:22px;color:var(--n8);display:block}.price-premium span{font-size:11px;color:var(--muted);line-height:1.3;display:block}.discount-visual{margin-top:17px;border-top:1px solid var(--n2);padding-top:14px;font-size:11px;color:var(--muted)}.discount-track{height:12px;margin:9px 0;background:#536172;border-radius:5px;overflow:hidden}.discount-track>div{height:100%;border-radius:5px}.discount-visual strong{font-size:12px;color:var(--n13)}.final-layout{grid-template-columns:1.1fr 1fr}.action-stack{display:flex;flex-direction:column;gap:10px;min-height:0}.action-stack .recommendation{padding:13px 14px;gap:9px}.action-stack .recommendation h4{font-size:13px}.action-stack .recommendation p{font-size:11px}.action-stack .impact strong{font-size:18px}.enablers{background:var(--n1);border:1px solid var(--n2);border-radius:11px;padding:13px 15px}.enablers h3{font-size:11px;color:var(--n8);margin:0 0 8px;text-transform:uppercase;letter-spacing:1px}.enabler-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.enabler-grid span{font-size:11px;line-height:1.35;color:var(--n5)}.management{display:flex;flex-wrap:wrap;align-items:center;gap:6px;background:#4652647a;border-left:3px solid var(--n8);padding:9px 12px;border-radius:4px;font-size:10px}.management b{color:var(--n8);text-transform:uppercase;letter-spacing:.5px;margin-right:3px}.management span{padding:5px 7px;border-radius:5px;border:1px solid var(--n2)}.forecast-panel{display:flex;flex-direction:column}.stack-row{margin:24px 0 26px}.stack-header{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px}.stack-track{height:29px;display:flex;background:#4c566a77;border-radius:6px;overflow:hidden}.stack-seg{height:100%;display:grid;place-items:center;font-size:10px;font-weight:800;color:#202732}.stack-seg.actual{background:var(--n9)}.stack-seg.q4{background:var(--n8)}.stack-seg.improve{background:var(--n14)}.stack-note{color:var(--muted);font-size:10px;margin-top:5px}.plan-reference{margin-top:auto;border-top:1px dashed #8390a1;padding-top:12px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.plan-reference strong{font-size:17px;color:var(--n6)}.forecast-takeaway{background:#4652647a;border-left:3px solid var(--n8);padding:12px;font-size:12px;line-height:1.45;margin-top:15px;border-radius:4px}
+@media(max-width:1050px){.narrative-grid,.final-layout{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}.stage-panel{height:auto}}
+
+/* Slide 2: expand the bridge and distribute the KPI cards vertically */
+@media (min-width:951px){
+ #slide-2 .content{gap:20px;justify-content:space-between}
+ #slide-2 .content>.panel{flex:1;min-height:0;display:flex;flex-direction:column;padding:22px 24px 19px}
+ #slide-2 .waterfall{flex:1;height:auto;min-height:260px;gap:14px}
+ #slide-2 .wfgraphic{height:auto;flex:1;min-height:0;width:80%}
+ #slide-2 .wf label{font-size:11px;min-height:30px;margin-top:11px}
+ #slide-2 .callout-grid{flex-shrink:0;gap:15px}
+ #slide-2 .callout{min-height:108px;padding:18px 18px}
+}
+
+/* Slide 3: three distinct executive narratives */
+.three-narratives{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;flex:1;min-height:0}
+.three-narratives .narrative-card{padding:17px 17px 15px;display:flex;flex-direction:column;gap:0}
+.narrative-top{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:12px}
+.narrative-number{font-size:10px;letter-spacing:1px;color:var(--n8);font-weight:800}
+.narrative-status{font-size:9px;font-weight:800;letter-spacing:.15px;white-space:nowrap}
+.narrative-status.supported{color:var(--n14)}.narrative-status.partial{color:var(--n13)}
+.three-narratives h3.narrative-head{font-size:15px;letter-spacing:0;line-height:1.25;text-transform:none;color:var(--n6);margin:0 0 14px;min-height:38px}
+.narrative-hero{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.narrative-big{font-size:52px;line-height:1;letter-spacing:-2px;font-weight:800;white-space:nowrap}
+.narrative-big .pp{font-size:22px;letter-spacing:-.4px}
+.narrative-sub{font-size:11px;color:var(--muted);line-height:1.38}
+.comparison-bars{display:flex;flex-direction:column;gap:11px}
+.comparison-line{display:grid;grid-template-columns:39px 1fr 45px;gap:8px;align-items:center;font-size:11px;color:var(--n5)}
+.comparison-line b{text-align:right;font-size:12px;color:var(--n6)}
+.narrative-track{height:12px;background:var(--n3);border-radius:5px;overflow:hidden}
+.narrative-track>div{height:100%;border-radius:5px}
+.narrative-divider{height:1px;background:var(--n2);margin:16px 0}
+.mini-metric{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.mini-metric strong{white-space:nowrap;font-size:19px;line-height:1;font-variant-numeric:tabular-nums}
+.mini-metric span{font-size:11px;color:var(--muted);line-height:1.35}
+.narrative-bottom{margin-top:auto;padding:12px;background:#46526470;border-left:3px solid var(--n8);border-radius:3px;font-size:11px;line-height:1.42;color:var(--n5)}
+.narrative-bottom b{color:var(--n8);display:block;margin-bottom:4px;letter-spacing:.4px;text-transform:uppercase;font-size:10px}
+.stage-mix{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stage-mix>div{display:grid;grid-template-columns:1fr auto;gap:7px;align-items:center;font-size:11px;color:var(--n5)}.stage-mix b{font-size:11px;color:var(--n6)}.stage-mix .narrative-track{grid-column:1/-1}
+.sub-label{font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:800;color:var(--n8);margin-bottom:12px}
+.small-caveat{color:var(--muted);font-size:10px;line-height:1.4;margin:10px 0 5px}
+.donut-wrapper{display:flex;align-items:center;gap:8px;min-height:166px}.interactive-donut{width:45%;min-width:0;flex-shrink:0}.interactive-donut svg{width:100%;display:block;overflow:visible}.loss-segment{cursor:pointer;outline:none;transition:stroke-width .15s,filter .15s}.loss-segment:hover,.loss-segment:focus{stroke-width:29;filter:brightness(1.17)}.svg-donut-value{fill:var(--n11);font-weight:800;font-size:24px}.svg-donut-label{fill:var(--muted);font-size:9px}.reason-list{flex:1;min-width:0}.reason-entry{display:grid;grid-template-columns:8px minmax(0,1fr) auto;gap:6px;align-items:center;margin:12px 0;font-size:10px;color:var(--n5)}.reason-dot{width:8px;height:8px;border-radius:2px}.reason-entry strong{font-size:10px;color:var(--n6)}
+@media(max-width:1050px){.three-narratives{grid-template-columns:1fr}.three-narratives .narrative-card{min-height:440px}.canvas{height:auto;min-height:790px;overflow:visible}}
+
+
+/* Slide 5 refinement */
+#slide-5 .content{margin-top:16px}
+#slide-5 .final-layout{grid-template-columns:1.06fr 1fr;align-items:stretch;gap:22px}
+#slide-5 .action-stack{gap:14px}
+#slide-5 .action-stack .recommendation{padding:18px 18px;gap:14px;align-items:start}
+#slide-5 .action-stack .recommendation h4{font-size:15px;line-height:1.22;margin-bottom:6px}
+#slide-5 .action-stack .recommendation p{font-size:12.5px;line-height:1.5;color:var(--n5)}
+#slide-5 .action-stack .num{width:40px;height:40px;font-size:24px;border-radius:10px}
+#slide-5 .action-stack .impact strong{font-size:22px;line-height:1.1}
+#slide-5 .action-stack .impact span{font-size:12px;line-height:1.45}
+#slide-5 .enablers{padding:16px 18px}
+#slide-5 .enablers h3{font-size:12px;margin-bottom:10px}
+#slide-5 .enabler-grid{grid-template-columns:1fr 1fr;gap:12px}
+#slide-5 .enabler-card{background:#46526452;border:1px solid var(--n2);border-radius:9px;padding:12px 12px 11px}
+#slide-5 .enabler-card b{display:block;color:var(--n6);font-size:12.5px;margin-bottom:4px}
+#slide-5 .enabler-card span{font-size:12px;line-height:1.45;color:var(--n5)}
+#slide-5 .decision-box{background:#46526466;border-left:3px solid var(--n8);border-radius:6px;padding:13px 14px}
+#slide-5 .decision-box h3{font-size:12px;color:var(--n8);margin:0 0 10px;text-transform:uppercase;letter-spacing:.9px}
+#slide-5 .decision-grid{display:grid;grid-template-columns:1fr;gap:10px}
+#slide-5 .decision-card{background:#3e4a5c73;border:1px solid var(--n2);border-radius:9px;padding:11px 12px}
+#slide-5 .decision-card b{display:block;font-size:12.5px;color:var(--n6);margin-bottom:4px}
+#slide-5 .decision-card span{display:block;font-size:12px;line-height:1.45;color:var(--n5)}
+#slide-5 .forecast-panel{padding:18px 20px}
+#slide-5 .stack-row{margin:22px 0 24px}
+#slide-5 .stack-header{font-size:13px;margin-bottom:8px}
+#slide-5 .stack-track{height:36px;border-radius:8px;position:relative;overflow:visible;background:#4c566a77}
+#slide-5 .stack-seg{position:relative;height:100%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#202732;cursor:default;transition:filter .15s ease, transform .15s ease}
+#slide-5 .stack-seg:hover{filter:brightness(1.05);transform:translateY(-1px)}
+#slide-5 .stack-seg:hover::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;background:#2b3341;color:var(--n6);border:1px solid var(--n2);padding:6px 8px;border-radius:6px;font-size:11px;line-height:1.2;box-shadow:0 6px 18px rgba(0,0,0,.24);z-index:10;pointer-events:none}
+#slide-5 .stack-note{font-size:11px;margin-top:7px}
+#slide-5 .forecast-takeaway{font-size:13px;line-height:1.5}
+#slide-5 .plan-reference{padding-top:14px;margin-top:8px}
+@media (max-width:1050px){
+  #slide-5 .enabler-grid{grid-template-columns:1fr}
+}
+</style>
+<style>
+/* Slide 1: move chart baseline below the month labels */
+#slide-1 .monthly{border-bottom:0;position:relative;margin-bottom:16px}
+#slide-1 .monthly::after{content:"";position:absolute;left:0;right:0;bottom:-13px;border-bottom:1px solid var(--edge);pointer-events:none}
+
+/* Slide 5 — compact, balanced presentation layout, without clipping */
+#slide-5 .canvas{padding-top:30px;padding-bottom:18px}
+#slide-5 .title{margin:8px 0 7px}
+#slide-5 .subtitle{margin-bottom:12px}
+#slide-5 .content{margin-top:2px}
+#slide-5 .final-layout{gap:18px;grid-template-columns:1.06fr 1fr;min-height:0}
+#slide-5 .action-stack{gap:9px;min-height:0}
+#slide-5 .action-stack .recommendation{padding:12px 13px;gap:10px;grid-template-columns:35px minmax(0,1fr) 93px}
+#slide-5 .action-stack .num{width:33px;height:33px;font-size:19px}
+#slide-5 .action-stack .recommendation h4{font-size:13px;line-height:1.15;margin-bottom:4px}
+#slide-5 .action-stack .recommendation p{font-size:11.2px;line-height:1.38}
+#slide-5 .action-stack .impact strong{font-size:18px}
+#slide-5 .action-stack .impact span{font-size:10.5px;line-height:1.35}
+#slide-5 .enablers{padding:11px 13px}
+#slide-5 .enablers h3{font-size:11px;margin:0 0 6px}
+#slide-5 .enabler-grid{grid-template-columns:1fr}
+#slide-5 .enabler-card{padding:9px 11px}
+#slide-5 .enabler-card b{font-size:11.5px;margin-bottom:3px}
+#slide-5 .enabler-card span{font-size:11px;line-height:1.38}
+#slide-5 .decision-box{padding:10px 12px;min-height:0}
+#slide-5 .decision-box h3{font-size:11px;margin:0 0 7px}
+#slide-5 .decision-grid{gap:6px}
+#slide-5 .decision-card{padding:7px 10px}
+#slide-5 .decision-card b{font-size:11.5px;margin-bottom:2px}
+#slide-5 .decision-card span{font-size:10.8px;line-height:1.3}
+#slide-5 .forecast-panel{padding:16px 18px;min-height:0}
+#slide-5 .forecast-panel h3{margin-bottom:12px}
+#slide-5 .stack-row{margin:17px 0 19px}
+#slide-5 .stack-track{height:32px}
+#slide-5 .stack-seg{font-size:0!important}
+#slide-5 .stack-note{font-size:10px;margin-top:5px}
+#slide-5 .plan-reference{margin-top:auto;padding-top:9px}
+#slide-5 .forecast-takeaway{font-size:11.5px;line-height:1.4;padding:10px;margin-top:11px}
+@media(max-height:780px) and (min-width:1051px){
+ #slide-5 .canvas{height:94vh;padding-top:20px}
+ #slide-5 .subtitle{margin-bottom:8px}
+ #slide-5 .action-stack{gap:6px}
+ #slide-5 .action-stack .recommendation{padding:9px 11px}
+ #slide-5 .action-stack .recommendation p{font-size:10.5px;line-height:1.25}
+ #slide-5 .enablers{padding:8px 11px}
+ #slide-5 .enabler-card{padding:7px 9px}
+ #slide-5 .decision-box{padding:8px 10px}
+ #slide-5 .decision-card{padding:5px 8px}
+ #slide-5 .decision-card span{font-size:10px;line-height:1.22}
+ #slide-5 .stack-row{margin:11px 0 13px}
+}
+</style>
+</head>
+<body><main class="slides" id="slides">
+<section class="slide" id="slide-1"><div class="canvas"><div class="eyebrow">RSP BOOKINGS / BOARD WORKING SESSION / 01</div><h1 class="title">RSP Bookings Snapshot - Sep. 2026 YTD</h1><p class="subtitle">RSP is $7.4M behind plan on a YTD basis with just 49% attainment as of Sep. 2026</p><div class="content"><div class="kpis"><div class="kpi"><label>YTD bookings</label><b>$7.10M</b><small>vs $14.50M plan</small></div><div class="kpi"><label>Bookings gap</label><b class="danger">−$7.40M</b><small>−51.0% to plan</small></div><div class="kpi"><label>Opportunities created</label><b>272 <small style="display:inline;font-size:14px">/ 399</small></b><small>−32% vs plan</small></div><div class="kpi"><label>Closed win rate</label><b>9.2%</b><small>vs 20% planned</small></div><div class="kpi"><label>Average deal size</label><b>$284K</b><small>vs $165K plan · +72%</small></div></div><div class="two"><div class="panel"><h3>Monthly bookings · actual vs plan ($M)</h3><div class="legend"><span><i class="dot" style="background:var(--n3)"></i>Plan</span><span><i class="dot" style="background:var(--n8)"></i>Actual</span><span>Hover for value</span></div><div class="monthly" id="monthly"><div class="month"><div class="bars"><div class="bar plan" data-val="$1.30M" style="height:52%"></div><div class="bar actual" data-val="$0.40M" style="height:15.8962256%"></div></div><span>Jan</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.50M" style="height:60%"></div><div class="bar actual" data-val="$1.56M" style="height:62.2581452%"></div></div><span>Feb</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.70M" style="height:68%"></div><div class="bar actual" data-val="$2.33M" style="height:93.01638679999999%"></div></div><span>Mar</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.50M" style="height:60%"></div><div class="bar actual" data-val="$0.08M" style="height:3.2336%"></div></div><span>Apr</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.60M" style="height:64%"></div><div class="bar actual" data-val="$0.61M" style="height:24.240485600000003%"></div></div><span>May</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.70M" style="height:68%"></div><div class="bar actual" data-val="$0.60M" style="height:23.937800000000003%"></div></div><span>Jun</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.60M" style="height:64%"></div><div class="bar actual" data-val="$0.92M" style="height:36.602850000000004%"></div></div><span>Jul</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.70M" style="height:68%"></div><div class="bar actual" data-val="$0.14M" style="height:5.799999999999999%"></div></div><span>Aug</span></div><div class="month"><div class="bars"><div class="bar plan" data-val="$1.90M" style="height:76%"></div><div class="bar actual" data-val="$0.47M" style="height:19%"></div></div><span>Sep</span></div></div></div><div class="panel"><h3>Quarterly performance</h3><table class="mini-table"><thead><tr><th>Period</th><th>Plan</th><th>Actual</th><th>Variance</th></tr></thead><tbody><tr><td>Q1</td><td>$4.5M</td><td>$4.3M</td><td class="amber">−5%</td></tr><tr><td>Q2</td><td>$4.8M</td><td>$1.3M</td><td class="danger">−73%</td></tr><tr><td>Q3</td><td>$5.2M</td><td>$1.5M</td><td class="danger">−70%</td></tr><tr class="total"><td>YTD</td><td>$14.5M</td><td>$7.1M</td><td class="danger">−51%</td></tr></tbody></table><div class="insight" style="margin-top:15px">Only February and March beat plan. Median time to win increased to <b>133 days</b> versus the 45-day plan</div></div></div></div><div class="footer"><span><strong>01 / 05</strong></span></div></div></section>
+<section class="slide" id="slide-2"><div class="canvas"><div class="eyebrow">DRIVER ATTRIBUTION / 02</div><h1 class="title">Bridging the Gap</h1><p class="subtitle">Weaker conversion and a thinner pipeline explain the miss</p><div class="content"><div class="panel"><h3>YTD bookings bridge · $M</h3><div class="waterfall" id="waterfall"><div class="wf"><div class="wfgraphic"><div class="wfblock neutral" style="bottom:0%;height:96.66666666666667%"><em>$14.50</em></div></div><label>YTD plan</label></div><div class="wf"><div class="wfgraphic"><div class="wfblock minus" style="bottom:87.8%;height:8.866666666666667%"><em> -1.33</em></div></div><label>Plan / drivers mismatch</label></div><div class="wf"><div class="wfgraphic"><div class="wfblock minus" style="bottom:59.86666666666667%;height:27.933333333333337%"><em> -4.19</em></div></div><label>Opportunity volume</label></div><div class="wf"><div class="wfgraphic"><div class="wfblock minus" style="bottom:27.400000000000002%;height:32.46666666666667%"><em> -4.87</em></div></div><label>Win rate</label></div><div class="wf"><div class="wfgraphic"><div class="wfblock plus" style="bottom:27.400000000000002%;height:19.733333333333334%"><em> +2.96</em></div></div><label>Deal size</label></div><div class="wf"><div class="wfgraphic"><div class="wfblock plus" style="bottom:47.13333333333333%;height:0.8%"><em> +0.03</em></div></div><label>Timing residual</label></div><div class="wf"><div class="wfgraphic"><div class="wfblock neutral" style="bottom:0%;height:47.333333333333336%"><em>$7.10</em></div></div><label>YTD actual</label></div></div></div><div class="callout-grid"><div class="callout"><strong class="danger">−$4.87M</strong><span>Lower conversion: actual <b>9.2%</b> on closed opportunities vs 20% plan</span></div><div class="callout"><strong class="danger">−$4.19M</strong><span>Insufficient pipeline: <b>272</b> new opportunities vs 399 planned</span></div><div class="callout"><strong class="green">+$2.96M</strong><span>Won deal size offsets part of the miss, but a single <b>$1.22M</b> win represents 17% of bookings</span></div></div></div><div class="footer"><span><strong>02 / 05</strong></span></div></div></section>
+<section class="slide" id="slide-3"><div class="canvas"><div class="eyebrow">CRO VS CMO / 03</div><h1 class="title">Evaluating Core Narratives</h1><p class="subtitle">Sales specialization weakened, lower-quality sourcing diluted conversion, and price explains only a small share of losses</p>
+<div class="content"><div class="three-narratives">
+<article class="panel narrative-card"><div class="narrative-top"><span class="narrative-number">01 / SALES EXECUTION</span><span class="narrative-status supported">SUPPORTED · CMO</span></div><h3 class="narrative-head">Late-stage conversion deteriorated</h3><div class="narrative-hero"><span class="narrative-big danger">−46<span class="pp">pp</span></span><span class="narrative-sub">Win probability after reaching Project Quoted</span></div>
+<div class="comparison-bars"><div class="comparison-line"><span>2025</span><div class="narrative-track"><div style="width:88.9%;background:var(--n9)"></div></div><b>89%</b></div><div class="comparison-line"><span>2026</span><div class="narrative-track"><div style="width:43.1%;background:var(--n11)"></div></div><b>43%</b></div></div>
+<div class="narrative-divider"></div><div class="mini-metric"><strong class="danger">0 / 54</strong><span>Closed deals won by sellers new to palletizers in 2026</span></div><div class="mini-metric"><strong>11.4%</strong><span>Win rate among experienced palletizer sellers</span></div>
+<div class="narrative-bottom"><b>Implication</b> Restore specialist coverage on Design Review+ deals rather than relying on generalist sellers alone</div></article>
+<article class="panel narrative-card"><div class="narrative-top"><span class="narrative-number">02 / LEAD QUALITY</span><span class="narrative-status supported">SUPPORTED · CRO</span></div><h3 class="narrative-head">Most losses die before technical validation</h3><div class="narrative-hero"><span class="narrative-big amber">79%</span><span class="narrative-sub">Of 2026 closed-lost deals ended at Prospect or Discovery</span></div>
+<div class="stage-mix"><div><span>Prospect</span><b>38.3%</b><div class="narrative-track"><div style="width:38.3%;background:var(--n9)"></div></div></div><div><span>Discovery</span><b>41.1%</b><div class="narrative-track"><div style="width:41.1%;background:var(--n8)"></div></div></div></div>
+<div class="narrative-divider"></div><div class="sub-label">Closed-deal win rate by source</div><div class="comparison-bars"><div class="comparison-line"><span>BDR</span><div class="narrative-track"><div style="width:23.3%;background:var(--n11)"></div></div><b>2.7%</b></div><div class="comparison-line"><span>Other</span><div class="narrative-track"><div style="width:100%;background:var(--n14)"></div></div><b>11.6%</b></div></div>
+<p class="small-caveat">Source comparison is descriptive and does not, by itself, prove lead quality caused the gap</p><div class="narrative-bottom"><b>Implication</b> Introduce budget / timing qualification gates and improve BDR-to-seller routing</div></article>
+<article class="panel narrative-card"><div class="narrative-top"><span class="narrative-number">03 / PRICING</span><span class="narrative-status partial">PARTLY SUPPORTED · CRO</span></div><h3 class="narrative-head">Price is not the primary loss driver</h3><div class="donut-wrapper"><div class="interactive-donut"><svg aria-label="Breakdown of 248 losses by category, hover over each segment for percentage" role="img" viewbox="0 0 148 148"><circle cx="74" cy="74" fill="none" r="50" stroke="#4c566a" stroke-width="22"></circle><circle aria-label="Price / design: 20 losses, 8.1% of total" class="loss-segment" cx="74" cy="74" fill="none" r="50" stroke="#bf616a" stroke-dasharray="25.3354 288.8238" stroke-dashoffset="0.0000" stroke-width="22" tabindex="0" transform="rotate(-90 74 74)"><title>Price / design: 20 of 248 losses (8.1% of total)</title></circle><circle aria-label="Timing / budget: 111 losses, 44.8% of total" class="loss-segment" cx="74" cy="74" fill="none" r="50" stroke="#ebcb8b" stroke-dasharray="140.6116 173.5477" stroke-dashoffset="-25.3354" stroke-width="22" tabindex="0" transform="rotate(-90 74 74)"><title>Timing / budget: 111 of 248 losses (44.8% of total)</title></circle><circle aria-label="Lead quality / qualification: 73 losses, 29.4% of total" class="loss-segment" cx="74" cy="74" fill="none" r="50" stroke="#81a1c1" stroke-dasharray="92.4743 221.6850" stroke-dashoffset="-165.9470" stroke-width="22" tabindex="0" transform="rotate(-90 74 74)"><title>Lead quality / qualification: 73 of 248 losses (29.4% of total)</title></circle><circle aria-label="Other reasons: 44 losses, 17.7% of total" class="loss-segment" cx="74" cy="74" fill="none" r="50" stroke="#a3be8c" stroke-dasharray="55.7379 258.4213" stroke-dashoffset="-258.4213" stroke-width="22" tabindex="0" transform="rotate(-90 74 74)"><title>Other reasons: 44 of 248 losses (17.7% of total)</title></circle><text class="svg-donut-value" text-anchor="middle" x="74" y="70">8.1%</text><text class="svg-donut-label" text-anchor="middle" x="74" y="88">Price / design</text></svg></div><div class="reason-list"><div class="reason-entry"><span class="reason-dot" style="background:#bf616a"></span><span>Price / design</span><strong>8.1%</strong></div><div class="reason-entry"><span class="reason-dot" style="background:#ebcb8b"></span><span>Timing / budget</span><strong>44.8%</strong></div><div class="reason-entry"><span class="reason-dot" style="background:#81a1c1"></span><span>Lead quality / qualification</span><strong>29.4%</strong></div><div class="reason-entry"><span class="reason-dot" style="background:#a3be8c"></span><span>Other reasons</span><strong>17.7%</strong></div></div></div>
+<div class="narrative-divider"></div><div class="mini-metric"><strong>20 / 248</strong><span>Losses explicitly attributed to price / design</span></div><div class="mini-metric"><strong>~87%</strong><span>Of closed-lost deals never reached Project Quoted</span></div>
+<div class="narrative-bottom"><b>Implication</b> Protect list pricing; reserve targeted discounts for qualified late-stage opportunities</div></article>
+</div></div><div class="footer"><span><strong>03 / 05</strong></span></div></div></section>
+<section class="slide" id="slide-4"><div class="canvas"><div class="eyebrow">PRICING &amp; ECONOMICS / 04</div><h1 class="title">Price Reduction Consideration</h1><p class="subtitle">A broad price cut would likely sacrifice gross profit without a proven demand response</p><div class="content"><div class="two equal"><div class="panel"><h3>20 kg palletizer reference prices · $K</h3><div id="prices"><div class="price-row"><span>RSP-20 Turnkey</span><div class="price-track"><div class="price-fill ours" style="width:93.33333333333333%"></div></div><span class="price-num">$140K</span></div><div class="price-row"><span>Competitor C</span><div class="price-track"><div class="price-fill" style="width:92%"></div></div><span class="price-num">$138K</span></div><div class="price-row"><span>Competitor A</span><div class="price-track"><div class="price-fill" style="width:88%"></div></div><span class="price-num">$132K</span></div><div class="price-row"><span>Competitor B</span><div class="price-track"><div class="price-fill" style="width:83.33333333333334%"></div></div><span class="price-num">$125K</span></div><div class="price-row"><span>Marketplace*</span><div class="price-track"><div class="price-fill market" style="width:41.333333333333336%"></div></div><span class="price-num">$62K</span></div></div><p class="note">*Marketplace unit includes hardware only, excluding deployment, safety certification, training and local support</p><div class="insight" style="margin-top:18px">Only <b>20 of 248</b> 2026 losses (<b>8%</b>) explicitly cite price. However, pricing is more relevant among post-quote losses</div><div class="price-premium"><div><strong>+6.3%</strong><span>RSP premium vs established peers’ average</span></div><div><strong>27%</strong><span>Price-related share of quoted+ losses</span></div></div></div><div class="panel"><h3>Required unit-volume uplift to hold profit flat</h3><table class="mini-table"><thead><tr><th>Price cut</th><th>Gross profit</th><th>After 8% commission</th></tr></thead><tbody><tr><td>5%</td><td>16%</td><td>20%</td></tr><tr class="total"><td>10%</td><td class="amber">39%</td><td class="danger">49%</td></tr><tr><td>15%</td><td>72%</td><td>99%</td></tr><tr><td>20%</td><td>127%</td><td>196%</td></tr></tbody></table><div class="insight" style="margin-top:18px"><b>Recommendation:</b> no broad list price cut. Establish deal-desk exceptions with margin guardrails and fill the vacant Product Line Manager position for a formal review</div><div class="discount-visual"><span>10% price cut</span><div class="discount-track"><div style="width:39%;background:var(--n13)"></div></div><strong>+39% units required for gross-profit parity</strong></div></div></div></div><div class="footer"><span><strong>04 / 05</strong></span></div></div></section>
+<section class="slide" id="slide-5"><div class="canvas"><div class="eyebrow">ACTIONS &amp; OUTLOOK / 05</div><h1 class="title">Proposed Improvements &amp; Effects</h1><p class="subtitle">Two targeted fixes add ~$1M in Q4, with most benefits arriving in 2027</p>
+<div class="content">
+<div class="two final-layout">
+<div class="action-stack">
+<div class="recommendation">
+<div class="num">1</div>
+<div>
+<h4>Re-specialize palletizer selling</h4>
+<p>Route <b>Design Review+</b> deals to experienced palletizer sellers or specialist overlay; new reps co-sell until ramped. <b>Reduce the sales cycle toward the 2025 median (69 days) and 45-day plan</b><br/><b>Owner:</b> CRO / Sales Ops · <b>YTD-equivalent:</b> +$1.75M</p>
+</div>
+<div class="impact"><strong>+$0.92M</strong><span>Q4 bookings<br/>+$0.33M GP</span></div>
+</div>
+<div class="recommendation">
+<div class="num">2</div>
+<div>
+<h4>Fix BDR qualification &amp; routing</h4>
+<p>Add qualification gates on <b>budget</b> and <b>timeline</b>; route existing and nurtured accounts direct to sellers; stop unsupported EMEA pursuit<br/><b>Owner:</b> CMO / BDR Manager  ·  <b>YTD-equivalent:</b> +$0.70M</p>
+</div>
+<div class="impact"><strong>+$0.08M</strong><span>Q4 bookings<br/>+$0.03M GP</span></div>
+</div>
+<div class="enablers">
+<h3>Supporting improvement</h3>
+<div class="enabler-grid">
+<div class="enabler-card"><b>Price governance</b><span>Name an interim Product Line Manager, run a formal price review and use a margin-protected deal desk for targeted discounting</span></div>
+
+</div>
+</div>
+<div class="decision-box">
+<h3>Decisions and rationale</h3>
+<div class="decision-grid">
+<div class="decision-card"><b>Restore specialist coverage</b><span>Quoted-stage win rate fell 89% → 43%; new-to-palletizer sellers won 0 of 54 deals. Target faster cycle times</span></div>
+<div class="decision-card"><b>Enforce BDR quality gates</b><span>79% of losses occur in Prospect / Discovery; BDR-sourced win rate is 2.7% vs 11.6% for other sources</span></div>
+<div class="decision-card"><b>Protect margins; reset outlook</b><span>Only 8% of losses explicitly cite price. Avoid blanket discounts and reforecast FY2026 near $10M</span></div>
+</div>
+</div>
+</div>
+<div class="panel forecast-panel">
+<h3>FY2026 bookings · cumulative scenario build ($M)</h3>
+<div class="legend"><span><i class="dot" style="background:var(--n9)"></i>Jan–Sep actual</span><span><i class="dot" style="background:var(--n8)"></i>Q4 base</span><span><i class="dot" style="background:var(--n14)"></i>Q4 improvements</span></div>
+<div id="forecast-stack">
+<div class="stack-row">
+<div class="stack-header"><strong>Low case</strong><strong>$8.63M</strong></div>
+<div class="stack-track" title="Low case total: $8.63M">
+<div class="stack-seg actual" data-tip="Jan–Sep actual: $7.10M" style="width:35.49818500000001%" title="Jan–Sep actual: $7.10M"></div>
+<div class="stack-seg q4" data-tip="Q4 base: $1.54M" style="width:7.675355000000001%" title="Q4 base: $1.54M"></div>
+<div class="stack-seg improve" data-tip="Q4 improvements: $0.00M" style="width:0%" title="Q4 improvements: $0.00M"></div>
+</div>
+<div class="stack-note">YTD $7.10M + Q4 base $1.54M + improvements $0.00M</div>
+</div>
+<div class="stack-row">
+<div class="stack-header"><strong>Base case</strong><strong>$10.05M</strong></div>
+<div class="stack-track" title="Base case total: $10.05M">
+<div class="stack-seg actual" data-tip="Jan–Sep actual: $7.10M" style="width:35.49818500000001%" title="Jan–Sep actual: $7.10M"></div>
+<div class="stack-seg q4" data-tip="Q4 base: $1.95M" style="width:9.749505%" title="Q4 base: $1.95M"></div>
+<div class="stack-seg improve" data-tip="Q4 improvements: $1.00M" style="width:4.9934650000000005%" title="Q4 improvements: $1.00M"></div>
+</div>
+<div class="stack-note">YTD $7.10M + Q4 base $1.95M + improvements $1.00M</div>
+</div>
+<div class="stack-row">
+<div class="stack-header"><strong>High case</strong><strong>$12.30M</strong></div>
+<div class="stack-track" title="High case total: $12.30M">
+<div class="stack-seg actual" data-tip="Jan–Sep actual: $7.10M" style="width:35.49818500000001%" title="Jan–Sep actual: $7.10M"></div>
+<div class="stack-seg q4" data-tip="Q4 base: $4.21M" style="width:21.029915%" title="Q4 base: $4.21M"></div>
+<div class="stack-seg improve" data-tip="Q4 improvements: $1.00M" style="width:4.9934650000000005%" title="Q4 improvements: $1.00M"></div>
+</div>
+<div class="stack-note">YTD $7.10M + Q4 base $4.21M + improvements $1.00M</div>
+</div>
+</div>
+<div class="plan-reference"><span>FY2026 plan</span><strong>$20.00M</strong></div>
+<div class="forecast-takeaway">Base case <b>$10.05M</b> · <b>50%</b> of the $20M annual plan, including ~$1.00M Q4 impact from proposed actions</div>
+</div>
+</div>
+</div>
+<div class="footer"><span><strong>05 / 05</strong></span></div></div></section>
+</main><div class="controls"><button aria-label="Previous slide" id="prev">←</button><span id="counter">1 / 5</span><button aria-label="Next slide" id="next">→</button><button title="Print or export to PDF">Print</button></div><div class="progress"><div id="progressFill" style="width: 20%;"></div></div>
+<script>
+(function () {
+  var slides = Array.from(document.querySelectorAll('.slide'));
+  var container = document.getElementById('slides');
+  var counter = document.getElementById('counter');
+  var progress = document.getElementById('progressFill');
+  var active = 0;
+  function go(i) {
+    active = Math.max(0, Math.min(slides.length - 1, i));
+    slides[active].scrollIntoView({behavior:'smooth',block:'start'});
+    update();
+  }
+  function update() {
+    counter.textContent = (active+1) + ' / ' + slides.length;
+    progress.style.width = ((active+1) / slides.length * 100) + '%';
+  }
+  document.getElementById('prev').addEventListener('click',function(){go(active-1)});
+  document.getElementById('next').addEventListener('click',function(){go(active+1)});
+  var printBtn = Array.from(document.querySelectorAll('button')).find(function(b){return /print|pdf/i.test(b.textContent)});
+  if(printBtn)printBtn.addEventListener('click',function(){window.print()});
+  document.addEventListener('keydown',function(e){
+    if(['ArrowRight','PageDown',' '].includes(e.key)) {e.preventDefault();go(active+1)}
+    else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(active-1)}
+    else if(e.key==='Home')go(0);
+    else if(e.key==='End')go(slides.length-1);
+  });
+  container.addEventListener('scroll',function(){
+    var i=Math.round(container.scrollTop/Math.max(1,container.clientHeight));
+    if(i!==active){active=Math.max(0,Math.min(slides.length-1,i));update()}
+  },{passive:true});
+  // Show the share of all losses in the donut centre on hover or keyboard focus
+  var donut = document.querySelector('.interactive-donut svg');
+  if (donut) {
+    var val = donut.querySelector('.svg-donut-value');
+    var label = donut.querySelector('.svg-donut-label');
+    var segments = Array.from(donut.querySelectorAll('.loss-segment'));
+    var shares = [
+      {share:'8.1%', name:'Price / design'},
+      {share:'44.8%', name:'Timing / budget'},
+      {share:'29.4%', name:'Lead quality'},
+      {share:'17.7%', name:'Other reasons'}
+    ];
+    function setDonut(i) {
+      val.textContent = shares[i].share;
+      label.textContent = shares[i].name;
+    }
+    function resetDonut() { setDonut(0); }
+    segments.forEach(function(segment,i) {
+      segment.addEventListener('pointerenter',function(){setDonut(i)});
+      segment.addEventListener('pointerleave',resetDonut);
+      segment.addEventListener('focus',function(){setDonut(i)});
+      segment.addEventListener('blur',resetDonut);
+    });
+  }
+  update();
+})();
+</script></body></html>
