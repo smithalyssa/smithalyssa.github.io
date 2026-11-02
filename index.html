@@ -140,6 +140,39 @@
  #slide-5 .decision-card span{font-size:10px;line-height:1.22}
  #slide-5 .stack-row{margin:11px 0 13px}
 }
+
+/* Phones: single-column flow, slides sized to their content */
+@media (max-width:640px){
+ .slides{scroll-snap-type:none;padding-bottom:64px}
+ .slide{min-height:0;padding:10px 8px}
+ .canvas,#slide-5 .canvas{width:100%;height:auto;min-height:0;padding:22px 16px 16px;border-radius:14px;overflow:visible}
+ .eyebrow{font-size:10px;letter-spacing:1.4px}
+ .title{font-size:24px;letter-spacing:-.4px}
+ .subtitle{font-size:14px}
+ .content{gap:14px}
+ .footer{margin-top:14px}
+ .panel{padding:14px}
+ .two,.two.equal,.narrative-grid,.final-layout,#slide-5 .final-layout{grid-template-columns:minmax(0,1fr)}
+ .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .kpi{padding:11px 12px}
+ .kpi b{font-size:21px;white-space:nowrap}
+ .kpi label{font-size:10px;letter-spacing:.6px}
+ .monthly{gap:6px;padding:12px 0 0}
+ .bars{gap:3px}
+ .waterfall,#slide-2 .waterfall{gap:4px;height:220px;min-height:0}
+ .wfgraphic,#slide-2 .wfgraphic{width:88%;height:165px;flex:none}
+ .wf label,#slide-2 .wf label{font-size:9px;min-height:34px;margin-top:8px;overflow-wrap:anywhere}
+ .wf em{font-size:10px;top:-17px}
+ .callout-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+ #slide-2 .callout{min-height:0;padding:14px}
+ .callout strong{white-space:nowrap}
+ .three-narratives .narrative-card{min-height:0}
+ .price-row{grid-template-columns:104px minmax(0,1fr) 48px;gap:8px}
+ #slide-5 .action-stack .recommendation{grid-template-columns:33px minmax(0,1fr)}
+ #slide-5 .action-stack .impact{grid-column:2;text-align:left}
+ .controls{bottom:8px;right:8px;padding:5px;gap:4px}
+ .controls button{padding:6px 9px}
+}
 </style>
 </head>
 <body><main class="slides" id="slides">
@@ -262,7 +295,9 @@
     else if(e.key==='End')go(slides.length-1);
   });
   container.addEventListener('scroll',function(){
-    var i=Math.round(container.scrollTop/Math.max(1,container.clientHeight));
+    // Slides can be taller than the viewport on phones, so pick the last slide whose top has passed the upper third
+    var mark=container.scrollTop+container.clientHeight/3,i=0;
+    slides.forEach(function(s,k){if(s.offsetTop<=mark)i=k});
     if(i!==active){active=Math.max(0,Math.min(slides.length-1,i));update()}
   },{passive:true});
   // Show the share of all losses in the donut centre on hover or keyboard focus
